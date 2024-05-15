@@ -3,7 +3,7 @@ package org.example;
 
 public class Solution {
     public static void main(String[] args) {
-        System.out.println(3781);
+        System.out.println(intToRoman(3749));
     }
     public static String intToRoman(int num){
         //метод принимает на вход арабские цифры, возвращает римские
@@ -16,6 +16,16 @@ public class Solution {
             return null;
         }
 
+        //Основная логика: вычитаем из входного числа поочередно все числа из массива
+        //Если получилось вычесть добавляем в результат сответственное буквенное значение
+        for (int i = 0; i < n.length && num > 0; i++) {
+            while (num >= n[i]){
+                num -= n[i];
+                result.append(str[i]);
+            }
+        }
+
         return result.toString();
+
     }
 }
