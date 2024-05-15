@@ -9,6 +9,7 @@ public class Solution {
         //метод принимает на вход арабские цифры, возвращает римские
         int[] n = {1000, 900, 500, 400, 100, 90, 50, 40, 10 ,9, 5, 4, 1};
         String[] str = {"M","CM","D","CD","C","XC","L","XL","X","IX","V","IV","I"};
+        //Использование одномерных массивов работает быстрее чем Map
         StringBuilder result = new StringBuilder();
 
         //проверка входного параметра
@@ -26,6 +27,7 @@ public class Solution {
         }
 
         return result.toString();
+
 
     }
 }
