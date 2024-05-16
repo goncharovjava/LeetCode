@@ -34,6 +34,35 @@ public class Solution2 {
         }
         return result;
     }
+    public int romanTInt(String s) {
+        //А через Switch все работает побыстрее
+        int arr[] = new int[s.length()];
+        int k = 0;
+        for(int i = 0; i < s.length(); i++){
+            int n = 0;
+            char a = s.charAt(i);
+            switch (a){
+                case 'I': n = 1; break;
+                case 'V': n = 5; break;
+                case 'X': n = 10; break;
+                case 'L': n = 50; break;
+                case 'C': n = 100; break;
+                case 'D': n = 500; break;
+                case 'M': n = 1000; break;
+            }
+            if(k > 0){
+                if(arr[k-1] < n) {
+                    arr[k] = n;
+                    arr[k-1] = -arr[k-1];
+                }
+                else arr[k] = n;
+            }else arr[k] = n;
+            k++;
+        }
+        int sum = 0;
+        for(int c : arr) sum += c;
 
+        return sum;
+    }
 }
 
