@@ -3,7 +3,7 @@ package org.example;
 import java.util.ArrayList;
 import java.util.Stack;
 
-public class Solution4 {
+public class Solution20 {
     public static void main(String[] args){
         String[] s = {"flower","flower","flower","flower"};
         System.out.println(longestCommonPrefix("([}}])"));
