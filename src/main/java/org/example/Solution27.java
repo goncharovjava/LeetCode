@@ -18,6 +18,7 @@ public class Solution27 {
         }
 
 
+        //Заменяем во входном массиве значение val значением выше проверочного
         int current = 0;
         int result = 0;
         for (int i = 0; i < nums.length; i++) {
@@ -28,7 +29,10 @@ public class Solution27 {
                 nums[i] = 51;
             }
         }
+
+        //Сортируем массив в порядке возрастания
         Arrays.sort(nums);
+        //заменяем все значения 51 нулями
         for (int i = 0; i < nums.length; i++) {
             if (nums[i] == 51){
                 nums[i] = 0;
