@@ -37,7 +37,7 @@ public class Solution26 {
         //Если длиннна массива ровна 1 то вернуть результат
         if (nums.length == 1){
             return result;
-        //иначе переписать массив num
+        //иначе переписать массив num зная количество уникальных символов count
         }else {
             for (int i = 1; i < current.length; i++) {
                 if (i < count){
