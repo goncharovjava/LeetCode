@@ -1,23 +1,26 @@
 package org.example;
 
+import java.util.Arrays;
+
 public  class Solution70 {
-    public static void main(String[] arg){
-        System.out.println(climbStairs(40));
+    public  static void main (String[] args){
+        int[] n = {0};
+        int[] m = {1};
+        merge(n,0,m ,1 );
     }
-    public static int climbStairs(int n) {
-        //Применение чисел фибоначи...
-        //Нужно произвести столько итераций сколько ступеней на входе.
-        //Числа Фибоначи начинаются с 0 и 1 по этому current и currentt инициализируем по умолчанию 0 и 1
-        int result = 0;
-        int current  = 0;
-        int currentt = 1;
-        for (int i = 0; i < n; i++) {
-            result = current + currentt;
-            current = currentt;
-            currentt = result;
 
+    public static void merge(int[] nums1, int m, int[] nums2, int n) {
+        //Если m = 0 то присваеваем значения второго массива первому
+        if (m == 0){
+             nums1 = nums2;
+        //Если n не равен 0 то добавляем в конец первого массива значения из второго
+        }else if (n != 0){
+            for (int i = m, j = 0; i < m+n; i++,j++) {
+                nums1[i] = nums2[j];
+            }
+            //Сортируем массив по возрастанию
+            Arrays.sort(nums1);
         }
-        return result;
-
+        //Если n == 0 ничего добавлять в первый массив не надо и соответсвенно сортировать его
     }
 }
